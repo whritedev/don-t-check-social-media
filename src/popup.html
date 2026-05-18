@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #2c2318;
+            --ink-soft: #6b5c4e;
+            --ink-muted: #a8927e;
+            --paper: #f5f0e8;
+            --paper-dark: #ede7d9;
+            --warm: #c4793a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 320px;
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--paper);
+            color: var(--ink);
+            padding: 1.5rem;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .stats-box {
+            background: var(--paper-dark);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--warm);
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            color: var(--warm);
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-muted);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--paper-dark);
+        }
+
+        .site-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .site-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(44, 35, 24, 0.05);
+        }
+
+        .site-name {
+            color: var(--ink-soft);
+        }
+
+        .quote-box {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--ink-soft);
+            line-height: 1.5;
+            padding: 1rem;
+            background: var(--white);
+            border: 1px solid var(--paper-dark);
+            border-radius: 2px;
+        }
+
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .btn {
+            background: var(--ink);
+            color: var(--paper);
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 2px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Focus</h1>
+        <span style="font-size: 0.8rem;">❧</span>
+    </div>
+
+    <div class="stats-box">
+        <p class="stat-label">Temps d'abstinence actuel</p>
+        <p id="total-time" class="stat-value">Calcul...</p>
+    </div>
+
+    <div class="section-title">Réseaux évités</div>
+    <ul id="site-list" class="site-list">
+        <!-- Rempli par JS -->
+    </ul>
+
+    <div class="section-title">Discipline</div>
+    <div class="quote-box">
+        <p id="popup-quote">"Chaque jour sans distraction est une victoire sur soi-même."</p>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 0.7rem; color: var(--ink-muted); font-style: italic;">La persévérance est la clé.</p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
