@@ -20,5 +20,11 @@
   "background": {
     "scripts": ["background.js"]
   },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["youtube-filter.css"]
+    }
+  ],
   "web_accessible_resources": ["blocked.html", "blocked.js"]
 }
