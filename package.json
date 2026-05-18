@@ -1,0 +1,14 @@
+{
+  "name": "don-t-check-social-media",
+  "version": "2.2.0",
+  "description": "A browser extension to block social media distractions.",
+  "scripts": {
+    "build": "powershell -Command \"if (Test-Path dist) { Remove-Item -Recurse -Force dist }; New-Item -ItemType Directory -Path dist; Copy-Item -Path src/* -Destination dist -Recurse\"",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write \"src/**/*.{js,html,css}\""
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
+  }
+}
