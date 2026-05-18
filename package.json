@@ -5,9 +5,13 @@
   "scripts": {
     "build": "powershell -Command \"if (Test-Path dist) { Remove-Item -Recurse -Force dist }; New-Item -ItemType Directory -Path dist; Copy-Item -Path src/* -Destination dist -Recurse\"",
     "lint": "eslint src/**/*.js",
-    "format": "prettier --write \"src/**/*.{js,html,css}\""
+    "format": "prettier --write \"src/**/*.{js,html,css}\"",
+    "package": "npm run build && bestzip extension.zip dist/*",
+    "package:chrome": "npm run build && bestzip abstinence-chrome.zip dist/*",
+    "package:firefox": "npm run build && bestzip abstinence-firefox.zip dist/*"
   },
   "devDependencies": {
+    "bestzip": "^2.2.5",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5"
   }

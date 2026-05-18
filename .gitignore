@@ -1,1 +1,5 @@
-/firefox/manifestTrue.json
+node_modules/
+dist/
+*.zip
+.eslintcache
+.DS_Store
