@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
   "name": "don't check social media",
-  "version": "2.2",
   "description": "Blocks TikTok, X and Instagram and displays a demotivating message",
+  "version": "2.2",
 
-  "permissions": ["storage"],
+  "permissions": ["declarativeNetRequest", "storage"],
 
   "host_permissions": [
     "*://*.tiktok.com/*",
@@ -13,26 +13,19 @@
     "*://*.instagram.com/*"
   ],
 
-  "background": {
-    "service_worker": "background.js"
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
   },
-
-  "action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
       "css": ["youtube-filter.css"]
-    }
-  ],
-
-  "web_accessible_resources": [
-    {
-      "resources": ["blocked.html", "blocked.js"],
-      "matches": ["<all_urls>"]
     }
   ]
 }
